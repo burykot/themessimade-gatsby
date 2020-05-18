@@ -1,0 +1,64 @@
+$color-text-base: #333;
+$color-base: #232987;
+$color-alternate: #FD591C;
+$color-base-contrast: #fff;
+$font-stack-header: Oswald, Lato, sans;
+$font-stack-sans: Lato, arial, sans;
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:$font-stack-sans}
+img{max-width:100%;}
+a{text-decoration:none;}
+h1, h2, h3, h4{font-family:$font-stack-header;}
+h2{
+  font-size: 45px;
+  font-weight:normal;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Lato|Oswald');
+
+// breakpoints mixin
+@mixin breakpoint($point) {
+   @if $point == m {
+     @media screen and (min-width: 900px) { @content ; }
+  }
+   @else if $point == l {
+     @media screen and (min-width: 1200px) { @content ; }
+  }
+}
+
+
+@keyframes colourOut {
+    0% { background:#fff; }
+    100% { background:#efefef; }
+}
+@keyframes colourIn {
+    0% { background:#efefef; }
+    100% { background:#fff; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+@keyframes fadeIn {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeAllOut {
+    0% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+@keyframes fadeAllIn {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+@keyframes fullFadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+@keyframes fullFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

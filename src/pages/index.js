@@ -1,21 +1,33 @@
 import React from "react"
-import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import '../css/App.scss';
+import Header from '../components/header'
+import Posts from '../components/posts'
+import Videos from '../components/videos'
+import Footer from '../components/footer'
+import Intro from '../components/intro'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+import ArticleData from '../data/articles'
+import VideoData from '../data/videos'
+
+
+const IndexPage = () => {
+  const featuredArticles = (data, feat) => {
+    return data.filter(el => el.featured === feat)
+  };
+
+  return (
+    <div className="App">
+      <div className="bodywrapper">
+        <Header />
+        <Intro />
+        <Posts data={featuredArticles(ArticleData, 1)}/>
+        <Videos data={VideoData} quantity="3" />
+        <Posts data={featuredArticles(ArticleData, 0)} />
+      </div>
+      <Footer />
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+  );
+}
 
 export default IndexPage

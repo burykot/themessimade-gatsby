@@ -1,0 +1,104 @@
+.postsWrapper{
+  display:grid;
+  padding: 100px 10px;
+  grid-gap: 100px;
+
+  @include breakpoint(m){
+    margin:0 auto;
+    padding-left:10px;
+    padding-right:10px;
+    grid-template-columns:1fr;
+    grid-gap: 60px;
+  }
+  @include breakpoint(l){
+    margin:0 auto;
+    max-width:1200px;
+    grid-template-columns:1fr;
+  }
+}
+.post{
+  border-radius: 6px;
+  position:relative;
+  @include breakpoint(m){
+    background:#fff;
+    animation: colourIn 0.3s;
+  }
+}
+.post a{
+  display:grid;
+  grid-gap: 20px;
+  @include breakpoint(m){
+    grid-template-columns:2fr 2fr;
+  }
+  @include breakpoint(l){
+    grid-template-columns:3fr 2fr;
+  }
+}
+@include breakpoint(m){
+.post:hover{
+    background:#efefef;
+    animation: colourOut 0.3s;
+    .post-image{
+      opacity:0.8;
+      animation: fadeOut 0.3s;
+    }
+    .postDescriptionWrapper{
+      opacity: 1;
+    }
+  }
+}
+
+.post-image{
+  width:100%;
+  height:350px;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position: center;
+  border-radius: 6px;
+  @include breakpoint(m){
+    opacity: 1;
+    animation: fadeIn 0.3s;
+  }
+}
+
+.postDescriptionWrapper{
+  margin:-4px;
+  @include breakpoint(m){
+    opacity:1;
+    animation: fadeAllOut 0.3s;
+  }
+}
+
+.post h2{
+  padding: 15px 15px 0 15px;
+  line-height:140%;
+  color: $color-alternate;
+  font-weight: normal;
+  @include breakpoint(m){
+  }
+}
+.post-date{
+  margin-bottom:11px;
+  display:inline-block;
+  background:#efefef;
+  padding:5px 8px;
+  margin-left:15px;
+}
+
+.post-description{
+  padding: 15px 15px 0 15px;
+  line-height:140%;
+  margin-bottom:11px;
+  font-size:20px;
+  color:$color-text-base;
+  @include breakpoint(m){
+    font-size:16px;
+  }
+}
+.readmore{
+  display:inline-block;
+  text-decoration:none;
+  color:#fff;
+  background:$color-base;
+  padding:5px 8px;
+}

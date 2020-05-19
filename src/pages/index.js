@@ -21,9 +21,9 @@ const IndexPage = () => {
       <div className="bodywrapper">
         <Header />
         <Intro />
-        <Posts data={featuredArticles(ArticleData, 1)}/>
+        <Posts postData={featuredArticles(ArticleData, 1)} />
         <Videos data={VideoData} quantity="3" />
-        <Posts data={featuredArticles(ArticleData, 0)} />
+        <Posts postData={featuredArticles(ArticleData, 0)} />
       </div>
       <Footer />
     </div>

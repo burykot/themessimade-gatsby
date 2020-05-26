@@ -1,0 +1,49 @@
+@import '../../css/mixins.scss';
+@import '../../css/variables.scss';
+
+.intro {
+    &__wrapper {
+        padding: 50px 10px 0;
+        display: grid;
+      
+        @include breakpoint(m){
+          padding: 100px 10px 0;
+          grid-template-columns: 3fr 2fr;
+        }
+      
+        @include breakpoint(l){
+          margin: 0 auto;
+          max-width: 1200px;
+        }
+    }
+
+    h2, p, ul {
+        grid-column-start: 1;
+        padding-top: 20px;
+        max-width: 100%;
+        color: $color-text-base;
+
+        @include breakpoint(m){
+          padding-left: 40px;
+        }
+    }
+
+    p {
+        line-height: 140%;
+        font-size: 18px;
+    }
+
+    li {
+        margin-left: 20px;
+        font-size: 18px;
+    }
+
+    a {
+        color: $color-alternate;
+    }
+
+    ul{
+        padding-top:0;
+    }
+}
+

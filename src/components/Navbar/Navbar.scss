@@ -1,0 +1,28 @@
+@import '../../css/mixins.scss';
+
+.navbar {
+    &__wrapper {
+        position:relative;
+        background: rgba(0,0,0,1);
+        width:100%;
+        z-index:100;
+        @include breakpoint(m){
+          position:fixed;
+          background: rgba(0,0,0,0.5);
+        }
+    }
+
+    &__nav {
+        max-width:100%;
+        padding:20px 10px;
+        @include breakpoint(l){
+          max-width:1200px;
+          margin:0 auto;
+        }
+    }
+
+    &__logo {
+        font-size:20px;
+        color:#fff;
+    }
+}

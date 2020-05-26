@@ -1,11 +1,11 @@
 import React from "react"
 
 import '../css/App.scss';
-import Header from '../components/header'
+import Header from '../components/Header/Header'
 import Posts from '../components/posts'
 import Videos from '../components/videos'
-import Footer from '../components/footer'
-import Intro from '../components/intro'
+import Footer from '../components/Footer'
+import Intro from '../components/Intro/Intro'
 
 import ArticleData from '../data/articles'
 import VideoData from '../data/videos'

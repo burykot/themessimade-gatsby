@@ -1,0 +1,25 @@
+@import '../../css/mixins.scss';
+
+.social-icons {
+    grid-row-start: 2;
+    margin: 50px 0 50px 0;
+    text-align: center;
+
+    @include breakpoint(m){
+        margin-bottom: 0;
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+
+    &__icon {
+        display: inline-block;
+        padding: 5px;
+        
+    }
+
+    &__icon-img {
+        height: 50px;
+        width: 50px;
+    }
+}

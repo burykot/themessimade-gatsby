@@ -1,8 +1,8 @@
-import React from 'react'
-import Instagram from '../assets/instagram-logo.svg'
-import Youtube from '../assets/youtube-logo.svg'
-import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
+import './Intro.scss';
+import SocialIcons from '../SocialIcons/SocialIcons';
 
 const Intro = () => {
   const introImageQuery = useStaticQuery(graphql`
@@ -18,9 +18,9 @@ const Intro = () => {
   `);
 
   return (
-    <div className="introWrapper">
+    <div className="intro__wrapper">
       <div className="intro">
-        <h2>Hello FPV world!</h2>
+        <h2 className="intro__headline">Hello FPV world!</h2>
         <p>My name is Konrad and I&apos;m an <a href="https://en.wikipedia.org/wiki/First-person_view_(radio_control)">FPV</a> pilot! the purpose of this site is to list some of my
         "achievements" - reviews, tests, mods, articles and adventures.</p>
         <p>I mostly fly quadcopters that I build myself. If you are interested in joining the fun, you can find a lot of resources needed to learn how to build your own RC craft:</p>
@@ -34,10 +34,7 @@ const Intro = () => {
       </div>
       <Img fixed={introImageQuery.file.childImageSharp.fixed} alt="DemonRC NOX5R racing quadcopter frame" />
 
-      <ul className="socialWrapper">
-        <li className="social social-youtube"><a href="https://www.youtube.com/channel/UCydV5xyX9KKfXdMG3RlID_A"><img src={Youtube} alt='Youtube profile' /></a></li>
-        <li className="social social-instagram"><a href="https://www.instagram.com/thisnamistaken/"><img src={Instagram} alt='Instagram profile' /></a></li>
-      </ul>
+      <SocialIcons />
     </div>
   )
 }
